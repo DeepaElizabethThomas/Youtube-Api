@@ -30,9 +30,9 @@ class youtubeResponse:
 
         while self.nextPageToken is not None:
             if self.pageCount == 0:
-                self.request = self.youtube.search().list(part='id', channelId='UCWJeq4klgb72URgVm9Zpiyg',maxResults='50')
+                self.request = self.youtube.search().list(part='id', channelId='TYGJeq4klgb398RgNh9Zpiyg',maxResults='50')
             elif self.pageCount > 0:
-                self.request = self.youtube.search().list(part='id', channelId='UCWJeq4klgb72URgVm9Zpiyg',pageToken=self.nextPageToken, maxResults='50')
+                self.request = self.youtube.search().list(part='id', channelId='TYGJeq4klgb398RgNh9Zpiyg',pageToken=self.nextPageToken, maxResults='50')
             self.response = self.request.execute()
             for videoList in self.response['items']:
                 self.allVideoList.append(videoList)
